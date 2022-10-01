@@ -23,10 +23,10 @@ background-position: 0% 50%
 
 @keyframes around-the-world{
   0%{    
-    transform: matrix(0.2, 0.1, 0, 0.8, -150, -10);
+    transform: matrix(0.2, 0.1, 0, 0.6, -150, -15);
   }
   10% {    
-    transform: matrix(0.4, 0.08, 0, 0.9, -120, -5);    
+    transform: matrix(0.5, 0.08, 0, 0.8, -120, -5);    
   }
   40% {    
     transform: matrix(1, 0.01, 0, 1, -30, 8);
@@ -41,20 +41,19 @@ background-position: 0% 50%
     transform: matrix(0.5, -0.08, 0, 0.8, 120, -5);    
   }
  100%{    
-    transform: matrix(0.2, -0.1, 0, 0.8, 150, -10);
+    transform: matrix(0.2, -0.1, 0, 0.6, 150, -15);
   }
 }
 
-body {
+body {  
   background: #000;
 }
-
-.circle_position_outer {
-  position: relative;  
-  margin: 150px auto 0;
+.circle_position_outer {  
+  margin: 40px auto;
   width: 300px;
   height: 300px;
-  border-radius: 50%; 
+  border-radius: 50%;
+  position: relative;  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,30 +65,29 @@ body {
   flex: 1;
   overflow: hidden;
 }
-
 .circle_position_inner::before {
-  content: "";  
+  content: "";
+  border-radius: 50%;
   position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
   background: linear-gradient(125deg, green, orange, hotpink, red);
   filter: blur(10px);  
   animation: circle-movement ease-out 5s infinite;
 }
 
-.title {
-  display:block;
-  z-index: 1;
-  background: -webkit-linear-gradient(-325deg, cyan, cyan, orange, hotpink, hotpink);
-  background-size: 200% 200%;  
+.title {  
   text-align: center;
   font-size: 45px;
   letter-spacing: -1px;
   font-weight: 900;
+  background: -webkit-linear-gradient(-325deg, cyan, cyan, orange, hotpink, hotpink);
+  background-size: 200% 200%;
+  display:block;  
+  z-index: 1;
   animation: number-movement ease-out 3s infinite, around-the-world linear 8s infinite 1.5s;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
