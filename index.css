@@ -49,12 +49,11 @@ body {
   background: #000;
 }
 .circle_position_outer {
-  margin: 150px auto 0;
+  position: relative;  
+  margin: calc(50vh-150px) auto 0;
   width: 300px;
   height: 300px;
-  border-radius: 50%;
-  position: relative;
-  margin: 40px;
+  border-radius: 50%; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,28 +66,28 @@ body {
   overflow: hidden;
 }
 .circle_position_inner::before {
-  content: "";
-  border-radius: 50%;
+  content: "";  
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
-  top: 0;
-  left: 0;
+  border-radius: 50%;
   background: linear-gradient(125deg, green, orange, hotpink, red);
   filter: blur(10px);  
   animation: circle-movement ease-out 5s infinite;
 }
 
-.title {  
+.title {
+  display:block;
+  z-index: 1;
+  background: -webkit-linear-gradient(-325deg, cyan, cyan, orange, hotpink, hotpink);
+  background-size: 200% 200%;  
   text-align: center;
   font-size: 45px;
   letter-spacing: -1px;
   font-weight: 900;
-  background: -webkit-linear-gradient(-325deg, cyan, cyan, orange, hotpink, hotpink);
-  background-size: 200% 200%;
-  display:block;  
-  z-index: 1;
   animation: number-movement ease-out 3s infinite, around-the-world linear 8s infinite 1.5s;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
